@@ -1,0 +1,125 @@
+.block.newsletter {
+  .newsletter-desc {
+    color: $text-dark;
+    position: relative;
+    padding-left: 85px;
+    padding-top: 3px;
+    min-height: 50px;
+    margin-bottom: 10px;
+    &:before {
+      position: absolute;
+      font-family: $fa;
+      content: "\f003";
+      font-size: 66px;
+      display: block;
+      left: 0;
+      top: 0;
+      line-height: 50px;
+    }
+
+  }
+  @media (min-width: 1401px) {
+    padding-top: 113px;
+    padding-bottom: 68px;
+    font-size: 16px;
+    line-height: 26px;
+    .newsletter-desc {
+      padding-right: 50px;
+    }
+  }
+  @media (max-width: 1400px) {
+    .newsletter-desc {
+      padding-left: 0;
+      &:before {
+        position: static;
+        text-align: center;
+        line-height: 1;
+      }
+      text-align: center;
+    }
+    .col-md-5, .col-md-7 {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    max-width:700px;
+    margin: 0 auto 20px;
+    div.action {
+      text-align: center;
+    }
+  }
+  .field {
+    padding: 0;
+    width: 100%;
+  }
+  input {
+    background: transparent;
+    border: 2px solid $text-dark;
+    padding: 8px 18px;
+    min-height: 55px;
+    width: 100%;
+    font-size: 16px;
+    color: $text-dark;
+    margin-bottom: 20px;
+    height: 55px;
+    @media (min-width: 1400px) {
+      width: 74.24%;
+      float: left;
+    }
+
+  }
+  .control {
+    position: relative;
+  }
+
+  button.action {
+    @include button-block;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 25px;
+    height: 55px;
+    width: 175px;
+    margin: 0 auto 15px;
+    float: none;
+    display: block;
+    @media (min-width: 1400px) {
+      width: 24.76%;
+      float: right;
+    }
+
+  }
+  #newsletter-error {
+    padding: 0;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    text-align: center;
+    @media (max-width: $screen-sm-min) {
+      width: 100%;
+    }
+    @media (max-width: 360px) {
+      position: relative;
+      bottom: auto;
+      top: -13px;
+    }
+  }
+  .title.heading-4 {
+    font-size: 16px;
+    line-height: 26px;
+    color: #707070;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  .title.heading-1 {
+    font-size: 30px;
+    color: #464646;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+}
+
+.sm-mobile .footer {
+  .newsletter {
+    padding-top: 30px;
+  }
+}

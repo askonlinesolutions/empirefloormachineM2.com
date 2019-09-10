@@ -1,0 +1,235 @@
+//
+// Variables
+//----------------------------------------------
+$search-padding-hor: 20px;
+$search-padding-vert: 17px;
+
+//
+//  Search mini form
+//  ---------------------------------------------
+
+.block-search {
+  .block-title,
+  .nested {
+    display: none;
+  }
+}
+
+//
+//  Desktop view Search
+//-----------------------------------------------
+.sm-desktop .block-search {
+  #search_mini_form {
+    &,
+    > .search {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .field {
+    position: static;
+  }
+  .block-search-toggle {
+    display: block;
+    font-family: $icon-outicons;
+    background: transparent;
+    color: $white;
+    &:hover {
+      color: $accent;
+    }
+    @include toggle-icons-via-rotation($rd-navbar-panel-height, 18px, inherit, '\e032', '\e00b');
+    &.active {
+      right: 0;
+      z-index: 99;
+    }
+  }
+  .ui-dialog-buttonpane {
+    display: none;
+  }
+
+  .control {
+    input {
+      border-radius: 0;
+      height: 50px;
+      width: 100%;
+      display: block;
+      background: $bg-input;
+      border: none;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 16px 100px 16px 25px;
+      margin-top: 15px;
+    }
+  }
+  #search_mini_form {
+    left: auto;
+    top: 0;
+    width: 0;
+    position: absolute;
+    transition: $default-transition;
+  }
+
+  form {
+    button[type="submit"] {
+      @include font-icon('\ea66');
+      background: transparent;
+      color: $sm-header-main-color;
+      line-height: 50px;
+      margin: 0;
+      padding: 0;
+      z-index: 1;
+      right: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+      position: absolute;
+      margin-top: 15px;
+      &:before {
+        font-size: 20px;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &.active #search_mini_form {
+    right: 280px;
+    left: auto;
+    width: calc(100% - 570px);
+    z-index: 9991;
+
+    button[type="submit"] {
+      top: 0;
+      opacity: 1;
+      z-index: 99;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+//
+//  Mobile view Search
+//-----------------------------------------------
+
+.sm-mobile .block-search {
+  #search_mini_form {
+    &,
+    > .search {
+      position: fixed;
+      z-index: 51;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .search .label {
+    display: block;
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    right: 2.5*$rd-navbar-panel-height;
+    font-family: $default-icon-family;
+    width: $rd-navbar-panel-height;
+    height: $rd-navbar-panel-height;
+    background: transparent;
+    @include toggle-icons-via-rotation($rd-navbar-panel-height, 20px, $sm-header-contrast-color, '\ea66', '\ea5c');
+
+    &.active {
+      right: 0;
+      z-index: 99;
+      span {
+        color: $text-light;
+      }
+      &:hover span {
+        color: $primary;
+      }
+    }
+  }
+
+  .control {
+    position: fixed;
+    z-index: 10;
+    left: auto;
+    top: 0;
+    right: 2*$rd-navbar-panel-height;
+    width: 0;
+    height: $rd-navbar-panel-height;
+    transition: $default-transition;
+
+    input {
+      border-radius: 0;
+      height: 100%;
+      width: 100%;
+      display: block;
+      background: $white;
+      border: none;
+      font-size: 12px;
+      line-height: 14px;
+      padding: 16px 0 16px 0;
+    }
+  }
+
+  .search .label.active + .control {
+    right: 0;
+    left: 0;
+    width: auto;
+    z-index: 97;
+
+    input {
+      padding: 16px 112px 16px 16px;
+    }
+  }
+
+  form {
+    button[type="submit"] {
+      @include font-icon('\ea66');
+      background: transparent;
+      line-height: $rd-navbar-panel-height;
+      margin: 0;
+      padding: 0;
+      position: fixed;
+      z-index: 59;
+      right: $rd-navbar-panel-height;
+      top: -$rd-navbar-panel-height;
+      width: $rd-navbar-panel-height;
+      height: $rd-navbar-panel-height;
+      opacity: 0;
+      &:before {
+        font-size: 20px;
+      }
+      &.active {
+        top: 0;
+        opacity: 1;
+        z-index: 99;
+        &:hover {
+          color: $text-dark;
+        }
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+  .ui-dialog-buttonpane {
+    display: none;
+  }
+  .block-search-toggle-wrap {
+    display: block !important;
+  }
+  .action.search.active {
+    color: $text-dark;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+

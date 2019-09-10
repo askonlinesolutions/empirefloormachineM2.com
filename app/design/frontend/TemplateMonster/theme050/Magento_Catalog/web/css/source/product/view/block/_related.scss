@@ -1,0 +1,56 @@
+//
+//  Related product
+//  ---------------------------------------------
+
+.block.related {
+  @include order(5);
+  @include make-col();
+  @include flex-basis(100%);
+  overflow: hidden;
+
+  .block-actions .select {
+    padding: 0;
+    background: transparent;
+    color: $primary;
+    &:hover {
+      color: $text-light;
+    }
+  }
+}
+
+.products-grid.products-related {
+  margin: 2rem 0 0;
+  padding: 0;
+
+  .product-items {
+    margin: 0 -15px;
+    padding: 0;
+  }
+  .product-item {
+    @include flex-basis(100%);
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .owl-item {
+    padding: 0 15px;
+  }
+}
+
+.related, .upsell {
+  @media (max-width: $screen-sm-min) {
+    .owl-nav {
+      top: -35px;
+    }
+  }
+  .block-title {
+    line-height: 1.2;
+    @media (min-width: $screen-md-min) {
+      font-size: 30px;
+    }
+    @media (max-width: $screen-sm-min) {
+      margin-bottom: 40px;
+    }
+  }
+}
+

@@ -1,0 +1,156 @@
+.sm-wrapper {
+  padding: 30px 0;
+  position: relative;
+  @include make-flex;
+  @include flex-direction(column);
+  height: 100%;
+  .logo {
+    display: table;
+    margin: 0 auto 30px;
+  }
+  .copyright {
+    display: block;
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 20px;
+    margin-bottom: -30px;
+  }
+  .nav-toggle {
+    display: none;
+  }
+}
+.sm-container-wrapper {
+  @include flex(1 0 auto);
+  padding: 0 20px;
+  border-top: 1px solid $border-color;
+}
+.sm-main {
+  max-width: 878px;
+  padding: 90px 0;
+}
+.sm-title {
+  font-weight: 500;
+  line-height: 1;
+}
+#sm-content-block {
+  margin-bottom: 62px;
+
+  .sm-title {
+    font-size: 50px;
+    margin-bottom: 29px;
+    font-weight: bold;
+  }
+  .sm-description {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+#sm-subscription-block {
+  .sm-title {
+    font-size: 32px;
+    margin-bottom: 37px;
+  }
+  .sm-text {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+.sm-content {
+  max-width: 560px;
+  .sm-button {
+    @include button-block;
+    @include button-block__primary;
+  }
+}
+.sm-subscription {
+  @include make-flex;
+
+  .control {
+    position: relative;
+    width: 100%;
+    &:before {
+      font-family:$default-icon-family;
+      content: '\ea3a';
+      position: absolute;
+      top: 17px;
+      left: 18px;
+      font-size: 18px;
+      line-height: 1;
+    }
+    input {
+      margin-right: 10px;
+      background: transparent;
+      padding-left: 45px;
+    }
+  }
+}
+#sm-timer-block{
+  margin-bottom: 66px;
+}
+#sm-timer {
+  @include make-flex;
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 1;
+  > div {
+    position: relative;
+    margin-right: 55px;
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+  span {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 8px;
+    text-align: center;
+  }
+  b {
+    display: none;
+  }
+}
+
+@media (max-width: $screen-sm-min - 1) {
+  #sm-content-block {
+    margin-bottom: 30px;
+  }
+  #sm-content-block .sm-title{
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  #sm-content-block .sm-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #sm-subscription-block .sm-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  #sm-timer {
+    font-size: 26px;
+    > div {
+      min-width: 30px;
+    }
+    span {
+      font-size: 14px;
+
+    }
+    b {
+      right: -16px;
+    }
+  }
+}
+@media (max-width: $screen-xs-min - 1) {
+  .sm-main {
+    padding: 50px 0;
+  }
+  .sm-subscription {
+    display: block;
+  }
+  .sm-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

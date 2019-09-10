@@ -1,0 +1,245 @@
+// Main Styles
+
+.navigation {
+  li.level-top,
+  a.level-top {
+    position: static;
+    text-transform: capitalize;
+
+    .submenu .submenu-reverse {
+      right: auto;
+    }
+    .menu-banner {
+      img {
+        @include transition(all 0.4s ease);
+      }
+      a {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        &:before, &:after {
+          @include transition(all 0.2s ease);
+          content: '';
+          display: block;
+          width: 0;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          background: rgba(0, 0, 0, 0.1);
+        }
+        img {
+          @include transition(all 0.4s ease);
+          width: 100%;
+        }
+        &:hover {
+          &:before, &:after {
+            width: 100%;
+            left: 0;
+          }
+          img {
+            -moz-transform: scale(1.1, 1.1);
+            -ms-transform: scale(1.1, 1.1);
+            -o-transform: scale(1.1, 1.1);
+            -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+          }
+        }
+      }
+    }
+    .mm-label {
+      position: absolute;
+      top: -10px;
+      left: -5px;
+      padding: 3px 7px;
+      text-transform: uppercase;
+      font-size: $label-font-size;
+      line-height: $label-font-size * 1.2;
+      color: $label-color;
+      background-color: $label-bg;
+      display: none;
+      @media (min-width: $screen-sm-min) {
+        display: block;
+      }
+    }
+
+    li {
+      position: relative;
+    }
+
+    .mm-image {
+      display: none;
+      margin-bottom: 10px;
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+      @media (min-width: $screen-sm-min) {
+        display: inline-block;
+      }
+
+    }
+
+    .megamenu-wrapper > .container {
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 50px;
+      background: $bg-light;
+      border: 1px solid $border-color;
+    }
+
+    ul.mm-submenu {
+      display: block;
+      padding: 0;
+      @media (min-width: $screen-lg-min) {
+        &.level2 {
+          padding-top: 10px;
+          li {
+            margin-bottom: 14px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $screen-sm-min - 1) {
+
+        &.level1 li {
+          a {
+            padding-left: 15px;
+            padding-right: 0;
+
+          }
+          li a {
+            padding-left: 30px;
+          }
+        }
+
+        .mm-submenu {
+          padding-left: 15px;
+        }
+      }
+    }
+
+    .tm-megamenu {
+
+      // FIRST level
+      ul.level1 {
+        > li {
+          > a {
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: $text-dark;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      // Link SECOND level
+      ul.level2 {
+        > li {
+          a {
+            font-size: 15px;
+            color: $text-dark;
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      // Product
+      .product {
+        display: none;
+        .product-image {
+          margin-bottom: 10px;
+          a {
+            display: block;
+            background: none;
+          }
+        }
+        .product-name {
+          display: block;
+          margin-bottom: 5px;
+          font-size: 16px;
+          line-height: 1.2;
+          text-align: center;
+          font-family: $default-font-family;
+          a {
+            padding: 0;
+            color: $black;
+            &:hover {
+              background: none;
+              color: $primary;
+            }
+          }
+        }
+        .price-box {
+          display: none;
+          .price {
+            font-size: 1.2em;
+            line-height: 1.2em;
+          }
+          .old-price {
+            font-size: 1em;
+            text-decoration: line-through;
+          }
+          .special-price {
+            font-size: 1.2em;
+          }
+        }
+
+        @media (min-width: $screen-md-min) {
+          display: block;
+        }
+      }
+
+      // Static Blocks
+      .widget,
+      .video,
+      .static-block {
+        display: none;
+        @media (min-width: $screen-md-min) {
+          display: block;
+        }
+      }
+    }
+
+    &:hover,
+    &.ui-state-focus {
+      .megamenu-wrapper {
+      }
+    }
+  }
+}
+
+//Hide ::before for products only megamenu on mobile
+.rd-navbar-nav li.rd-navbar--has-megamenu.products-only > .rd-navbar-submenu-toggle {
+  @media (max-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.navigation li.level-top .megamenu-wrapper > .container, .navigation li.level-top .page-print.sales-order-print .megamenu-wrapper > #maincontent, .page-print.sales-order-print .navigation li.level-top .megamenu-wrapper > #maincontent, .navigation a.level-top .megamenu-wrapper > .container, .navigation a.level-top .page-print.sales-order-print .megamenu-wrapper > #maincontent, .page-print.sales-order-print .navigation a.level-top .megamenu-wrapper > #maincontent {
+  @media (max-width: $screen-md-min - 1px) {
+    min-height: none !important;
+    padding: 0 !important;
+  }
+}
+
+nav.navigation[role="navigation"] .row {
+  @media (max-width: $screen-md-min - 1px) {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+
+

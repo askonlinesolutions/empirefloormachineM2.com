@@ -1,0 +1,111 @@
+/*
+* @subsection   RD Navbar
+*
+* @description  Describes style declarations for RD Navbar extension
+*/
+@import "../_variables.scss";
+@import "../_mixins.scss";
+
+%rd-navbar-hidden {
+    //display: none;
+}
+
+%rd-navbar-visible {
+    //display: block;
+}
+
+.rd-navbar--no-transition {
+    &, * {
+        transition: none !important;
+    }
+}
+
+.rd-navbar-wrap {
+    transition: $default-transition;
+}
+
+.rd-navbar, .rd-navbar.rd-navbar--is-clone {
+    //@extend %rd-navbar-hidden;
+}
+
+.rd-navbar-fixed,
+.rd-navbar-static,
+.rd-navbar-fullwidth,
+.rd-navbar-sidebar {
+    //@extend %rd-navbar-visible;
+}
+
+.rd-navbar-outer {
+    color: $rd-navbar-default-color;
+    background: $rd-navbar-contrast-color;
+}
+
+.rd-navbar-collapse,
+.rd-navbar-collapse-toggle{
+    //display: none;
+
+    .switcher.currency,
+    .switcher.language{
+        display: none;
+    }
+}
+
+.rd-navbar-fixed-linked body{
+    padding-top: $rd-navbar-panel-height;
+}
+
+.rd-navbar-nav,
+.sm-header-nav-toggle{
+    display: none;
+}
+
+.rd-navbar-brand{
+    display: none;
+    color: $rd-navbar-contrast-color;
+}
+
+/*
+* @subsection   RD Navbar Static
+*
+* @description  Describes style declarations for RD Navbar in static mode
+*/
+
+.rd-navbar-static {
+    &.rd-navbar--is-clone {
+        transition: $default-transition;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        @include transform(translateY(-105%));
+        z-index: 20;
+
+        .rd-navbar-panel {
+            display: none;
+        }
+
+        &.rd-navbar--is-stuck {
+            @include transform(translateY(0));
+        }
+    }
+
+    &.rd-navbar--is-stuck {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 20;
+        background: $bg-light;
+        box-shadow: 0 2px 4px transparentize($primary, .9);
+
+        .rd-navbar-panel {
+            display: none;
+        }
+
+        .page-header__panel,
+        .page-header__content {
+            display: none;
+        }
+    }
+}

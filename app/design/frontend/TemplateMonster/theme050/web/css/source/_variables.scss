@@ -1,0 +1,121 @@
+//
+// Grid system
+// --------------------------------------------------
+
+$column-count: 12;
+$column-width: 116px;
+$gutter-width: 20px;
+
+$row-ws: 0;
+
+$container-xs: 300px;
+$container-sm: 720px + $gutter-width;
+$container-md: 940px + $gutter-width;
+$container-lg: 1150px + $gutter-width;
+$container-xl: 1350px + $gutter-width;
+$container-xxl: $column-count*$column-width + $gutter-width*$column-count;
+
+// Layouts
+$layout-boxed-width: 1920px;
+
+// Resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1400px;
+$screen-xxl-min: 1612px;
+
+$screen-mob-min: $screen-md-min; // break-point for mobile styles
+
+// Fonts
+$default-font-family: 'Rubik', sans-serif;
+$extra-font-family: 'Roboto Slab', serif;
+$default-font-weight: 400;
+$default-font-size: 14px;
+$default-line-height: 1.5em;
+
+// Icons
+$material-icons: 'Material Icons';
+$icon-mini: 'Nucleo Mini';
+$icon-outline: 'Nucleo Outline';
+$icon-outicons: 'fl-outicons';
+$default-icon-family: 'Nucleo Mini';
+$fa: 'FontAwesome';
+
+// Colors
+$white: #FFF;
+$black: #000;
+$c-error: #d73105;
+$default: #888888;
+
+$allow: #3bb141;
+$denied: #ff5555;
+$special: $denied;
+
+$bg-light: #f5f5f5;
+$bg-dark: #f2f2f2;
+
+$primary: #62a304;
+$secondary: #676666;
+$accent: #ccc;
+$text-dark: #191919;
+$text-light: #333333;
+$text-lightest: #b4b4b4;
+$unactive: #999999;
+$review-star: #ffb503;
+
+$border-color: #e3e3e3;
+
+$modal-popup__box-shadow: (transparentize($black, .8));
+
+// Smart header vars
+
+$sm-header-main-color: $primary;
+$sm-header-contrast-color: $white;
+$sm-header-text-color: $text-light;
+$sm-header-hover-color: $primary;
+$sm-header-panel-height: 56px;
+
+$sm-header-item-fontsize: 14px;
+$sm-header-item-lineheight: 16px;
+$sm-header-item-padding: 17px;
+$sm-header-item-border: 1px solid $border-color;
+$sm-header-item-bg-1: #f1f1f1;
+$sm-header-item-bg-2: #e7e7e7;
+$bg-input: #f5f5f5;
+$bg-block: #f5f5f5;
+
+// Mobile view variables
+
+$rd-navbar-default-color: $default;
+$rd-navbar-contrast-color: $white;
+$rd-navbar-accent-color: #434343;
+$rd-navbar-accent-color-2: #323232;
+$rd-navbar-hover-color: $primary;
+$rd-navbar-panel-height: 56px;
+
+$default-header-shadow: 0 3px 5px 0 rgba(0, 0, 0, .25);
+
+//Indents
+$indent-base: 2rem;
+$indent-large: $indent-base * 2;
+$indent-small: $indent-base / 2;
+
+//Links
+$link-regular: $primary;
+$link-hover: $accent;
+$link-active: $text-dark;
+$link-alt: $default;
+
+//Transition
+$default-transition: .3s ease;
+//
+//  Form Variables
+//  ---------------------------------------------
+
+//Inputs
+$input-font-size: 14px;
+$input-line-height: 1.5em;
+$input-bg-color: $white;
+
