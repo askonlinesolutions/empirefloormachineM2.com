@@ -78,9 +78,9 @@ class Cm_Cache_Backend_File extends Zend_Cache_Backend_File
         }
 
         // Don't use parent constructor
-        while (list($name, $value) = each($options)) {
-            $this->setOption($name, $value);
-        }
+       foreach ($options as $name => $value){
+        $this->setOption($name, $value);
+    }
 
         // Check cache dir
         if ($this->_options['cache_dir'] !== null) { // particular case for this option
