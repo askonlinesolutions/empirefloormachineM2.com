@@ -213,6 +213,9 @@
         <referenceBlock name="upsell.product.addto.compare" remove="true" />
         <referenceBlock name="view.addto.compare" remove="true" />
         <referenceBlock name="wishlist_sidebar" remove="true" />
+        <referenceBlock name="search-term-popular-link" remove="true" />
+        <referenceBlock name="catalog-search-advanced-link" remove="true" />
+ 
 
     </body>
 </page>
