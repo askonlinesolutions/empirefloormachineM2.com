@@ -34,7 +34,7 @@ class AdapterFactory
     ) {
         $this->objectManager = $objectManager;
         $this->config = $config;
-        $this->adapterMap = array_merge($config->getAdapters(), $adapterMap);
+        $this->adapterMap = @array_merge($config->getAdapters(), $adapterMap);
     }
 
     /**
